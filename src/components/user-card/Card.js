@@ -39,7 +39,7 @@ class Card extends Component {
             }
           },
           error => {
-            console.log(error);
+            console.log("error" + error);
           }
         );
     } else {
