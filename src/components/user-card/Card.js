@@ -13,13 +13,7 @@ class Card extends Component {
 
   checkUserID = e => {
     const userId = e.target.value;
-    if (userId) {
-      if (!isNaN(userId)) {
-        this.setState({ userId: parseFloat(userId) });
-      }
-    } else {
-      this.setState({ userId: "" });
-    }
+    this.setState({ userId: parseFloat(userId) });
   };
 
   fetchUserDetail = () => {
@@ -27,21 +21,16 @@ class Card extends Component {
     if (userId) {
       fetch(`https://reqres.in/api/users/${userId}`)
         .then(res => res.json())
-        .then(
-          result => {
-            if (result.data) {
-              this.setState({
-                name: `${result.data.first_name} ${result.data.last_name}`,
-                userImage: result.data.avatar
-              });
-            } else {
-              this.setState({ userId: "", name: "", userImage: "" });
-            }
-          },
-          error => {
-            console.log("error" + error);
+        .then(result => {
+          if (result.data) {
+            this.setState({
+              name: `${result.data.first_name} ${result.data.last_name}`,
+              userImage: result.data.avatar
+            });
+          } else {
+            this.setState({ userId: "", name: "", userImage: "" });
           }
-        );
+        });
     } else {
       alert("Please enter a userId");
     }
@@ -51,7 +40,7 @@ class Card extends Component {
     return (
       <div className="main-card-container">
         <input
-          type="text"
+          type="number"
           className="txtfield-userid"
           onChange={this.checkUserID}
           value={this.state.userId}
