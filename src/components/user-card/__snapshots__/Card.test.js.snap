@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component renders correctly 1`] = `
+<div
+  className="main-card-container"
+>
+  <input
+    className="txtfield-userid"
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <button
+    className="btn-get-details"
+    onClick={[Function]}
+    text="Get Details"
+  />
+  <div
+    className="card"
+  >
+    <div
+      className="image-container"
+    >
+      <img
+        src=""
+      />
+    </div>
+    <div
+      className="details-container"
+    >
+      <span>
+        ID: 
+        
+      </span>
+      <span>
+        Name: 
+        
+      </span>
+    </div>
+  </div>
+</div>
+`;
